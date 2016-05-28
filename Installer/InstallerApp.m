@@ -147,6 +147,7 @@ enum {
 			// context
 			nil,
 			// msg
+            @"%@",
 			[[NSBundle mainBundle] localizedStringForKey:kUnsupportedOSError value:nil table:nil]);
 		// Disable install
 		[installButton setEnabled:NO];
@@ -226,6 +227,7 @@ enum {
 				// context
 				nil,
 				// msg
+                @"%@",
 				[[NSBundle mainBundle]
 					localizedStringForKey:kUpdateSuccessMessage
 					value:nil table:nil]);
@@ -250,6 +252,7 @@ enum {
 				// context
 				nil,
 				// msg
+                @"%@",
 				[[NSBundle mainBundle]
 					localizedStringForKey:kInstallSuccessMessage
 					value:nil table:nil]);
@@ -275,6 +278,7 @@ enum {
 			// context
 			nil,
 			// msg
+            @"%@",
 			[[NSBundle mainBundle]
 				localizedStringForKey:kInstallFailureMessage
 				value:nil table:nil]);
@@ -335,6 +339,7 @@ enum {
 			// context
 			nil,
 			// msg
+            @"%@",
 			[[NSBundle mainBundle]
 				localizedStringForKey:kUninstallSuccessMessage
 				value:nil table:nil]);
@@ -359,6 +364,7 @@ enum {
 			// context
 			nil,
 			// msg
+            @"%@",
 			[[NSBundle mainBundle]
 				localizedStringForKey:kUninstallFailureMessage
 				value:nil table:nil]);
