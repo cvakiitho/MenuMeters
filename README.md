@@ -15,7 +15,7 @@ Additional features over standart fork:
 
 CPU / Memory per process load monitor not possible to acomplish due to Apple restrictions.
 
-* https://github.com/axet/MenuMeters/tree/task_for_pid
+* https://github.com/axet/MenuMeters/compare/master...axet:task_for_pid
 
 # Usage:
 If you just want to use it, please go to http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/ and download the binary there. Note: as written there, you might need to log out and log in (or maybe to reboot) once to enable the new version.
