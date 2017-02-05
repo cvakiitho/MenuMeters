@@ -147,8 +147,7 @@ enum {
 			// context
 			nil,
 			// msg
-            @"%@",
-			[[NSBundle mainBundle] localizedStringForKey:kUnsupportedOSError value:nil table:nil]);
+      @"%@", [[NSBundle mainBundle] localizedStringForKey:kUnsupportedOSError value:nil table:nil]);
 		// Disable install
 		[installButton setEnabled:NO];
 	}
@@ -227,8 +226,7 @@ enum {
 				// context
 				nil,
 				// msg
-                @"%@",
-				[[NSBundle mainBundle]
+				@"%@", [[NSBundle mainBundle]
 					localizedStringForKey:kUpdateSuccessMessage
 					value:nil table:nil]);
 		} else {
@@ -252,8 +250,7 @@ enum {
 				// context
 				nil,
 				// msg
-                @"%@",
-				[[NSBundle mainBundle]
+				@"%@", [[NSBundle mainBundle]
 					localizedStringForKey:kInstallSuccessMessage
 					value:nil table:nil]);
 		}
@@ -278,8 +275,7 @@ enum {
 			// context
 			nil,
 			// msg
-            @"%@",
-			[[NSBundle mainBundle]
+			@"%@", [[NSBundle mainBundle]
 				localizedStringForKey:kInstallFailureMessage
 				value:nil table:nil]);
 	}
@@ -339,8 +335,7 @@ enum {
 			// context
 			nil,
 			// msg
-            @"%@",
-			[[NSBundle mainBundle]
+			@"%@", [[NSBundle mainBundle]
 				localizedStringForKey:kUninstallSuccessMessage
 				value:nil table:nil]);
 	} else {
@@ -364,8 +359,7 @@ enum {
 			// context
 			nil,
 			// msg
-            @"%@",
-			[[NSBundle mainBundle]
+			@"%@", [[NSBundle mainBundle]
 				localizedStringForKey:kUninstallFailureMessage
 				value:nil table:nil]);
 	}
@@ -485,7 +479,7 @@ enum {
 	err = AuthorizationExecuteWithPrivileges(auth, [toolPath fileSystemRepresentation], authFlags, execArgs, &outputPipe);
 	if (err != errAuthorizationSuccess) {
 		AuthorizationFree(auth, kAuthorizationFlagDefaults);
-		LOGERROR(@"Installer error: Unable to execute installer tool. Error: %d", err);
+		LOGERROR(@"Installer error: Unable to execute installer tool. Error: %d", (int)err);
 		return NO;
 	}
 	// This blocks till the tool returns status
