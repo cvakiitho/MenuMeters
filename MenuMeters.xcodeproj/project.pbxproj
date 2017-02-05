@@ -1898,6 +1898,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = InstallTool;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1975,7 +1976,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Installer/Resources/Info.plist;
+				OTHER_CFLAGS = "-DELCAPITAN";
 				PRODUCT_NAME = "MenuMeters Installer";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2082,7 +2085,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Installer/Resources/Info.plist;
+				OTHER_CFLAGS = "-DELCAPITAN";
 				PRODUCT_NAME = "MenuMeters Installer";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2091,6 +2096,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = InstallTool;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
