@@ -494,17 +494,28 @@ const char* TEMPS_SHORT[][2] = {
         }
     }
     {
+        NSMutableString *name = [[NSMutableString alloc] init];
+        [name appendString:@"    RPM"];
         int max = SMCGetFanNumber();
-        if (max > 0)
-        {
-            NSMutableString *name = [[NSMutableString alloc] init];
-            [name appendString:@"    RPM"];
-            for(int i = 0; i < max; i++) {
-                int speed = SMCGetFanSpeed(i);
-                [name appendFormat:@" / %d", speed];
-            }
-            LiveUpdateMenuItemTitle(extraMenu, kCPURPMMenuIndex, name);
+        switch(max) {
+            case 0:
+                [name appendString:@" NONE"];
+                break;
+            case 1:
+                [name appendFormat:@" %d", (int)SMCGetFanSpeed(0)];
+                break;
+            case 2:
+                [name appendFormat:@" L:%d R:%d", (int)SMCGetFanSpeed(0), (int)SMCGetFanSpeed(1)];
+                break;
+            default:
+                [name appendFormat:@" %d", (int)SMCGetFanSpeed(0)];
+                for(int i = 1; i < max; i++) {
+                    int speed = SMCGetFanSpeed(i);
+                    [name appendFormat:@" / %d", speed];
+                }
+                break;
         }
+        LiveUpdateMenuItemTitle(extraMenu, kCPURPMMenuIndex, name);
     }
     SMCClose();
 
