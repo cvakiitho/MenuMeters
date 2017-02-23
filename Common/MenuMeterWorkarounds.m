@@ -27,8 +27,8 @@
 #import "AppleUndocumented.h"
 
 // Declare NSProcessInfo version tests from 10.10
-#ifndef ELCAPITAN
-#ifdef __x86_64__
+#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_10
+#ifdef CGFLOAT_IS_DOUBLE
 typedef struct {
 	int64_t majorVersion;
 	int64_t minorVersion;
@@ -102,7 +102,7 @@ __private_extern__ void LiveUpdateMenuItemTitle(NSMenu *menu, CFIndex index, NSS
 	// when the item is not found.
 	if (index < 0) return;
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4 && MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_11
 	// The Carbon side is set first since setting it results in a empty
 	// title on the Cocoa side.
 	MenuRef carbonMenu = _NSGetCarbonMenu(menu);
@@ -118,7 +118,7 @@ __private_extern__ void LiveUpdateMenuItemTitle(NSMenu *menu, CFIndex index, NSS
 
 __private_extern__ void LiveUpdateMenu(NSMenu *menu) {
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4 && MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_11
 	MenuRef carbonMenu = _NSGetCarbonMenu(menu);
 	if (carbonMenu) {
 		UpdateInvalidMenuItems(carbonMenu);
@@ -140,7 +140,7 @@ __private_extern__ BOOL IsMenuMeterMenuBarDarkThemed(void) {
 } // IsMenuMeterMenuBarDarkThemed
 
 __private_extern__ NSColor * MenuItemTextColor(void) {
-#ifndef __x86_64__
+#ifndef CGFLOAT_IS_DOUBLE
 	// Handle ShapeShifter themes using Carbon API. Probably not relevant anymore, but seems to
 	// work everywhere we need it.
 	RGBColor rgbThemeColor;
