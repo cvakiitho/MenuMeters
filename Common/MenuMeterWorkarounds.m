@@ -27,7 +27,7 @@
 #import "AppleUndocumented.h"
 
 // Declare NSProcessInfo version tests from 10.10
-#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_10
+#ifndef ELCAPITAN
 #ifdef CGFLOAT_IS_DOUBLE
 typedef struct {
 	int64_t majorVersion;
