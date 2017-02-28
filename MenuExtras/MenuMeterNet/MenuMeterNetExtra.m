@@ -1481,7 +1481,7 @@
 ///////////////////////////////////////////////////////////////
 
 - (void)configFromPrefs:(NSNotification *)notification {
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
     [super configDisplay:kNetMenuBundleID  fromPrefs:ourPrefs withTimerInterval:[ourPrefs netInterval]];
 #endif
 

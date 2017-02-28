@@ -50,7 +50,7 @@
 - (int)loadBitFlagPref:(NSString *)prefName validFlags:(int)flags
 			  zeroValid:(BOOL)zeroValid defaultValue:(int)defaultValue;
 - (void)saveBitFlagPref:(NSString *)prefName value:(int)value;
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 - (BOOL)loadBoolPref:(NSString *)prefName defaultValue:(BOOL)defaultValue;
 - (void)saveBoolPref:(NSString *)prefName value:(BOOL)value;
 #endif
@@ -497,7 +497,7 @@
 ///////////////////////////////////////////////////////////////
 
 - (void)migratePrefFile {
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 	// Find the user's pref folder
     NSString *prefFolderPath = nil;
 	FSRef prefFolderFSRef;
