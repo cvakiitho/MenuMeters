@@ -58,7 +58,7 @@
 #define kMenuCrackerURL				[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuCracker" ofType:@"menu" inDirectory:@""]]
 
 // Paths to the menu extras
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
 #define kCPUMenuURL nil
 #define kDiskMenuURL nil
 #define kMemMenuURL nil
@@ -716,7 +716,7 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 ///////////////////////////////////////////////////////////////
 
 - (void)loadExtraAtURL:(NSURL *)extraURL withID:(NSString *)bundleID {
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
     [ourPrefs saveBoolPref:bundleID value:YES];
     [ourPrefs syncWithDisk];
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:bundleID
@@ -758,7 +758,7 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 } // loadExtraAtURL:withID:
 
 - (BOOL)isExtraWithBundleIDLoaded:(NSString *)bundleID {
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
     return [ourPrefs loadBoolPref:bundleID defaultValue:YES];
 #endif
 	void *anExtra = NULL;
@@ -771,7 +771,7 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 } // isExtraWithBundleIDLoaded
 
 - (void)removeExtraWithBundleID:(NSString *)bundleID {
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
     [ourPrefs saveBoolPref:bundleID value:NO];
     [ourPrefs syncWithDisk];
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:bundleID

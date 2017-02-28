@@ -27,7 +27,7 @@
 
 @interface MenuMeterDefaults : NSObject
 
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
 - (BOOL)loadBoolPref:(NSString *)prefName defaultValue:(BOOL)defaultValue;
 - (void)saveBoolPref:(NSString *)prefName value:(BOOL)value;
 #endif

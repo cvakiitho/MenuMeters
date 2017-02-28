@@ -28,7 +28,7 @@
 //	Definitions for 64-bit from 10.9+ so we can still use old SDKs.
 //
 ///////////////////////////////////////////////////////////////
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 struct vm_statistics64 {
 	natural_t	free_count;
 	natural_t	active_count;

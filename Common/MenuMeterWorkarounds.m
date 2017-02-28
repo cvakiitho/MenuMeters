@@ -27,7 +27,7 @@
 #import "AppleUndocumented.h"
 
 // Declare NSProcessInfo version tests from 10.10
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 #ifdef CGFLOAT_IS_DOUBLE
 typedef struct {
 	int64_t majorVersion;
@@ -49,12 +49,12 @@ typedef struct {
 
 
 static BOOL SystemVersionCompare(SInt32 gestVersion, int32_t major, int32_t minor) {
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 	if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)]) {
 #endif
 		NSOperatingSystemVersion version = { major, minor, 0 };
 		return [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version];
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 	} else {
 		SInt32 systemVersion = 0;
 		OSStatus err = Gestalt(gestaltSystemVersion, &systemVersion);

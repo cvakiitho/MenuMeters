@@ -103,6 +103,6 @@ int CoreMenuExtraRemoveMenuExtra(void *menuExtra, int whoCares);
 
 @end
 
-#ifdef ELCAPITAN
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
 #import "MenuMetersMenuExtraBase.h"
 #endif

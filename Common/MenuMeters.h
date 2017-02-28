@@ -28,7 +28,7 @@
 ///////////////////////////////////////////////////////////////
 
 // Bundle directory name of the preferences bundle
-#ifndef ELCAPITAN
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_11
 #define kPrefBundleName					@"MenuMeterDefaults.bundle"
 #else
 #define kPrefBundleName                 @"MenuMetersApp.app/Contents/Resources/MenuMeterDefaults.bundle"
