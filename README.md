@@ -6,6 +6,7 @@ Additional features over standart fork:
 * CPU Graph History
 * Temperature monitors
 * Fan speed monitor
+* Date Time widget
 
 # Screenshots
 
