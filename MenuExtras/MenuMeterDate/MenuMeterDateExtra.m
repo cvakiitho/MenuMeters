@@ -112,6 +112,8 @@
     
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy MMM d  HH:mm"];
+    dayFormatter = [[NSDateFormatter alloc] init];
+    [dayFormatter setDateFormat:@"yyyy/MM/dd"];
 
 	// Setup our menu
 	extraMenu = [[NSMenu alloc] initWithTitle:@""];
@@ -125,11 +127,12 @@
 	// Setup menu content
 	NSMenuItem *menuItem = nil;
 
-    date = [[NSDatePicker alloc] initWithFrame: NSMakeRect(0, 0, 140, 150)];
+    date = [[MenuMeterDateView alloc] initWithFrame: NSMakeRect(0, 0, 140, 150)];
     [date setDatePickerStyle: NSClockAndCalendarDatePickerStyle];
     [date setDatePickerElements: NSYearMonthDayDatePickerElementFlag];
     NSDate *cur = [NSDate date];
     [date setDateValue:cur];
+    dateLast = [cur copy];
 
 
 	// Add memory usage menu items and placeholder
@@ -242,6 +245,14 @@
     
     NSString *formattedDateString = [dateFormatter stringFromDate: cur];
     [extraMenu setTitle: formattedDateString];
+    
+    NSString *d1 = [dayFormatter stringFromDate:dateLast];
+    NSString *d2 = [dayFormatter stringFromDate:cur];
+    
+    if (![d1 isEqual: d2]) {
+        date.dateValue = cur;
+        dateLast = [cur copy];
+    }
 
     // If the menu is down, update it
 	if ([self isMenuDown] || ([self respondsToSelector:@selector(isMenuDownForAX)] && [self isMenuDownForAX])) {

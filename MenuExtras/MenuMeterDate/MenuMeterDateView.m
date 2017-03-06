@@ -1,7 +1,7 @@
 //
-//  MenuMeterMemExtra.h
+//  MenuMeterMemView.m
 //
-//	Menu Extra implementation
+//	NSView for the menu extra
 //
 //	Copyright (c) 2002-2014 Alex Harper
 //
@@ -21,33 +21,43 @@
 // 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#import <Cocoa/Cocoa.h>
-#import <Carbon/Carbon.h>
-#import "AppleUndocumented.h"
-#import "MenuMeters.h"
-#import "MenuMeterDefaults.h"
-#import "MenuMeterWorkarounds.h"
 #import "MenuMeterDateView.h"
 
-@interface MenuMeterDateExtra : NSMenuExtra  {
+@implementation MenuMeterDateView
 
-    NSDateFormatter *dayFormatter;
-    NSDateFormatter *dateFormatter;
-    
-    BOOL							isPantherOrLater,    isLeopardOrLater;
-	// Menu Extra necessities
-	NSMenu 							*extraMenu;
-	// The timer
-	NSTimer							*updateTimer;
-	// Pref object
-	MenuMeterDefaults				*ourPrefs;
-	// Width of the text display
-	float							textWidth;
-	// Theme support
-	NSColor							*fgMenuThemeColor;
-    NSDatePicker                    *date;
-    NSDate                          *dateLast;
+///////////////////////////////////////////////////////////////
+//
+//	init/dealloc
+//
+///////////////////////////////////////////////////////////////
 
-} // MenuMeterMemExtra
+- initWithFrame:(NSRect)rect menuExtra:extra {
+
+	// Use NSView initializer, not our undoc superclass
+	self = [super initWithFrame:rect];
+	if (!self) {
+		return nil;
+	}
+	memMenuExtra = extra;
+    return self;
+
+} // initWithFrame
+
+- (void)dealloc {
+
+    [super dealloc];
+
+} // dealloc
+
+
+///////////////////////////////////////////////////////////////
+//
+//	View commands
+//
+///////////////////////////////////////////////////////////////
+
+- (BOOL)acceptsFirstMouse:(NSEvent *)theEvent {
+    return YES;
+}
 
 @end
