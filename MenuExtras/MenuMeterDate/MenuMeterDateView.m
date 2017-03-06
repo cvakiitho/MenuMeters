@@ -31,24 +31,11 @@
 //
 ///////////////////////////////////////////////////////////////
 
-- initWithFrame:(NSRect)rect menuExtra:extra {
-
-	// Use NSView initializer, not our undoc superclass
-	self = [super initWithFrame:rect];
-	if (!self) {
-		return nil;
-	}
-	memMenuExtra = extra;
-    return self;
-
-} // initWithFrame
-
 - (void)dealloc {
 
     [super dealloc];
 
 } // dealloc
-
 
 ///////////////////////////////////////////////////////////////
 //

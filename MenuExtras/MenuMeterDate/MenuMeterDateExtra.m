@@ -46,6 +46,8 @@
 - (void)updateMemDisplay:(NSTimer *)timer;
 - (void)updateMenuWhenDown;
 
+- (void)openDateTimePrefs:(id)sender;
+
 // Prefs
 - (void)configFromPrefs:(NSNotification *)notification;
 
@@ -56,29 +58,6 @@
 //	Localized strings
 //
 ///////////////////////////////////////////////////////////////
-
-#define	kFreeLabel							@"F:"
-#define	kUsedLabel							@"U:"
-#define kUsageTitle							@"Memory Usage:"
-#define kPageStatsTitle						@"Memory Pages:"
-#define kVMStatsTitle						@"VM Statistics:"
-#define kSwapStatsTitle						@"Swap Files:"
-#define kUsageFormat						@"%@ used, %@ free, %@ total"
-#define kActiveWiredFormat					@"%@ active, %@ wired"
-#define kInactiveFreeFormat					@"%@ inactive, %@ free"
-#define kCompressedFormat					@"%@ compressed (%@)"
-#define kVMPagingFormat						@"%@ pageins, %@ pageouts"
-#define kVMCacheFormat						@"%@ cache lookups, %@ cache hits (%@)"
-#define kVMFaultCopyOnWriteFormat			@"%@ page faults, %@ copy-on-writes"
-#define kSingleSwapFormat					@"%@ swap file present in %@"
-#define kMultiSwapFormat					@"%@ swap files present in %@"
-#define kSingleEncryptedSwapFormat			@"%@ encrypted swap file present in %@"
-#define kMultiEncryptedSwapFormat			@"%@ encrypted swap files present in %@"
-#define kMaxSingleSwapFormat				@"%@ swap file at peak usage"
-#define kMaxMultiSwapFormat					@"%@ swap files at peak usage"
-#define kSwapSizeFormat						@"%@ total swap space"
-#define kSwapSizeUsedFormat					@"%@ total swap space (%@ used)"
-#define kMBLabel							@"MB"
 
 ///////////////////////////////////////////////////////////////
 //
@@ -127,22 +106,25 @@
 	// Setup menu content
 	NSMenuItem *menuItem = nil;
 
-    date = [[MenuMeterDateView alloc] initWithFrame: NSMakeRect(0, 0, 140, 150)];
+    NSDate *cur = [NSDate date];
+
+    date = [[MenuMeterDateView alloc] initWithFrame: NSMakeRect(0, 0, 140, 145)];
+    [date setAutoresizingMask: NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin];
     [date setDatePickerStyle: NSClockAndCalendarDatePickerStyle];
     [date setDatePickerElements: NSYearMonthDayDatePickerElementFlag];
-    NSDate *cur = [NSDate date];
     [date setDateValue:cur];
     dateLast = [cur copy];
-
 
 	// Add memory usage menu items and placeholder
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
     [menuItem setView: date];
     [menuItem setEnabled:YES];
     
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-
+    [extraMenu addItem:[NSMenuItem separatorItem]];
+    menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"Open Date & Time Preferences..." action:@selector(openDateTimePrefs:) keyEquivalent:@""];
+    [menuItem setTarget: self];
+    [menuItem setEnabled:YES];
+    
 	// Register for pref changes
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
 														selector:@selector(configFromPrefs:)
@@ -303,5 +285,13 @@
 	}
 
 } // configFromPrefs
+
+- (void)openDateTimePrefs:(id)sender {
+    
+    if (![[NSWorkspace sharedWorkspace] openFile:@"/System/Library/PreferencePanes/DateAndTime.prefPane"]) {
+        NSLog(@"MenuMeterDate unable to launch the Time Preferences.");
+    }
+    
+} // openNetworkPrefs
 
 @end
