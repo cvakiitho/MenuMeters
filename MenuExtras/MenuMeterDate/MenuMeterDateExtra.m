@@ -108,7 +108,7 @@
 
     NSDate *cur = [NSDate date];
 
-    date = [[MenuMeterDateView alloc] initWithFrame: NSMakeRect(0, 0, 140, 145)];
+    date = [[MenuMeterDateView alloc] initWithFrame: NSMakeRect(0, 0, 150, 150)];
     [date setAutoresizingMask: NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin];
     [date setDatePickerStyle: NSClockAndCalendarDatePickerStyle];
     [date setDatePickerElements: NSYearMonthDayDatePickerElementFlag];
