@@ -2,5 +2,4 @@
 
 unset CPATH
 
-xcodebuild -target PrefPane clean
-xcodebuild -target PrefPane
+xcodebuild -target PrefPane -configuration Release clean build
