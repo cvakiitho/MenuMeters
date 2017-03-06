@@ -67,6 +67,17 @@
 		3383C1E81B69DD2D00915D5D /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3383C1E01B69DD2D00915D5D /* nl.lproj */; };
 		3383C1E91B69DD2D00915D5D /* zh_CN.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3383C1E11B69DD2D00915D5D /* zh_CN.lproj */; };
 		33BA36E91B69E74400B4220E /* MenuMeterDefaults.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4ECB2C805FE6F4000954E26 /* MenuMeterDefaults.bundle */; };
+		7B620CE81E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
+		7B620CE91E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
+		7B620CEA1E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
+		7B620CEB1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
+		7B620CEC1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
+		7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
+		7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
+		7B620CF21E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
+		7B620CF31E6D4F1700B499B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE41E6D4F1700B499B3 /* Localizable.strings */; };
+		7B620CF41E6D4F1700B499B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE41E6D4F1700B499B3 /* Localizable.strings */; };
+		7B620CF51E6D4F1700B499B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE41E6D4F1700B499B3 /* Localizable.strings */; };
 		7BE1EA071CCE8B2A00CACD11 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1EA051CCE8B2A00CACD11 /* smc.c */; };
 		7BE1EA081CCE8B2A00CACD11 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1EA051CCE8B2A00CACD11 /* smc.c */; };
 		D403AD3C0E04E99C00348443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403AD3B0E04E99C00348443 /* Foundation.framework */; };
@@ -305,6 +316,10 @@
 		3383C1DF1B69DD2D00915D5D /* Japanese.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Japanese.lproj; sourceTree = "<group>"; };
 		3383C1E01B69DD2D00915D5D /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		3383C1E11B69DD2D00915D5D /* zh_CN.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = zh_CN.lproj; sourceTree = "<group>"; };
+		7B620CE01E6D4F1700B499B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuMeterDateExtra.h; sourceTree = "<group>"; };
+		7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuMeterDateExtra.m; sourceTree = "<group>"; };
+		7B620CE51E6D4F1700B499B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7BE1EA051CCE8B2A00CACD11 /* smc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = smc.c; path = MenuExtras/MenuMeterCPU/smc.c; sourceTree = "<group>"; };
 		7BE1EA061CCE8B2A00CACD11 /* smc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = smc.h; path = MenuExtras/MenuMeterCPU/smc.h; sourceTree = "<group>"; };
 		D40138D504F7B1DD00A87BC9 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Installer.nib; sourceTree = "<group>"; };
@@ -609,6 +624,18 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7B620CDE1E6D4F1700B499B3 /* MenuMeterDate */ = {
+			isa = PBXGroup;
+			children = (
+				7B620CE01E6D4F1700B499B3 /* Info.plist */,
+				7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */,
+				7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */,
+				7B620CE41E6D4F1700B499B3 /* Localizable.strings */,
+			);
+			name = MenuMeterDate;
+			path = MenuExtras/MenuMeterDate;
+			sourceTree = "<group>";
+		};
 		D40DB4A303D25F2100A87BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +657,7 @@
 		D40DB4A903D25F4C00A87BC9 /* MenuExtras */ = {
 			isa = PBXGroup;
 			children = (
+				7B620CDE1E6D4F1700B499B3 /* MenuMeterDate */,
 				D477AAD603D4B9DE00A87BC9 /* MenuMeterCPU */,
 				D42EC94703D498CC00A87BC9 /* MenuMeterDisk */,
 				D45F12C503D4886000A87BC9 /* MenuMeterMem */,
@@ -1004,6 +1032,7 @@
 				D4ECB39D05FE72E100954E26 /* MenuMeters.h in Headers */,
 				D4ECB39E05FE72E100954E26 /* MenuMetersPref.h in Headers */,
 				D45CFE7B092451D80015131F /* MenuMeters.pch in Headers */,
+				7B620CEC1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1049,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B620CEB1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */,
 				D4ECB3CF05FE736D00954E26 /* InstallerApp.h in Headers */,
 				D4ECB3D005FE736D00954E26 /* Installer.h in Headers */,
 				D45CFE7C092451DC0015131F /* MenuMeters.pch in Headers */,
@@ -1312,12 +1342,14 @@
 				3383C1A51B69D8D000915D5D /* Dark Color ArrowsReadWrite.tiff in Resources */,
 				3383C1A61B69D8D000915D5D /* Dark Color ArrowsWrite.tiff in Resources */,
 				3383C1A71B69D8D000915D5D /* LightsWrite.tiff in Resources */,
+				7B620CF51E6D4F1700B499B3 /* Localizable.strings in Resources */,
 				33BA36E91B69E74400B4220E /* MenuMeterDefaults.bundle in Resources */,
 				3383C1A81B69D8D000915D5D /* LightsIdle.tiff in Resources */,
 				3383C1A91B69D8D000915D5D /* LightsRead.tiff in Resources */,
 				3383C1AA1B69D8D000915D5D /* LightsReadWrite.tiff in Resources */,
 				3383C1E31B69DD2D00915D5D /* French.lproj in Resources */,
 				3383C1AB1B69D8D000915D5D /* Aqua LightsIdle.tiff in Resources */,
+				7B620CEA1E6D4F1700B499B3 /* Info.plist in Resources */,
 				3383C1E51B69DD2D00915D5D /* Italian.lproj in Resources */,
 				3383C1AC1B69D8D000915D5D /* Aqua LightsReadWrite.tiff in Resources */,
 				33281A4A1B6BFB05001EA811 /* Assets.xcassets in Resources */,
@@ -1401,6 +1433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4ECB3A105FE72E100954E26 /* Localizable.strings in Resources */,
+				7B620CF41E6D4F1700B499B3 /* Localizable.strings in Resources */,
 				D4ECB3A205FE72E100954E26 /* MenuMetersPref.nib in Resources */,
 				D4ECB3A305FE72E100954E26 /* MenuMetersPref.tiff in Resources */,
 				D4ECB3A405FE72E100954E26 /* InfoPlist.strings in Resources */,
@@ -1408,6 +1441,7 @@
 				D4ECB3A605FE72E100954E26 /* LinearScale.tiff in Resources */,
 				D4ECB3A705FE72E100954E26 /* LogScale.tiff in Resources */,
 				D4ECB3A805FE72E100954E26 /* SquareRootScale.tiff in Resources */,
+				7B620CE91E6D4F1700B499B3 /* Info.plist in Resources */,
 				D4ECB4FB05FE7F2300954E26 /* MenuMeterDefaults.bundle in Resources */,
 				3345DD2C1B6BE7DB003843FC /* MenuMetersApp.app in Resources */,
 			);
@@ -1422,7 +1456,9 @@
 				D4ECB3D405FE736D00954E26 /* InfoPlist.strings in Resources */,
 				D4ECB3D505FE736D00954E26 /* Installer.icns in Resources */,
 				D4ECB50105FE7F2F00954E26 /* MenuMeters.prefPane in Resources */,
+				7B620CF31E6D4F1700B499B3 /* Localizable.strings in Resources */,
 				D4ECB50205FE7F3000954E26 /* InstallTool in Resources */,
+				7B620CE81E6D4F1700B499B3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1512,6 +1548,7 @@
 				3383C1951B69C78B00915D5D /* MenuMeterDiskExtra.m in Sources */,
 				3383C1831B69B88800915D5D /* MenuMeterWorkarounds.m in Sources */,
 				3383C1771B69B72600915D5D /* main.m in Sources */,
+				7B620CF21E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				3383C1821B69B88500915D5D /* MenuMeterPowerMate.m in Sources */,
 				3383C1881B69BF7700915D5D /* MenuMeterCPUExtra.m in Sources */,
 				3383C18C1B69C75F00915D5D /* MenuMeterMemExtra.m in Sources */,
@@ -1599,6 +1636,7 @@
 				D4ECB3AA05FE72E100954E26 /* MenuMeterDefaults.m in Sources */,
 				D4ECB3AB05FE72E100954E26 /* MenuMeterPowerMate.m in Sources */,
 				D4ECB3AC05FE72E100954E26 /* MenuMetersPref.m in Sources */,
+				7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				D4E8531319F6CD0300E25BBC /* MenuMeterWorkarounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1616,6 +1654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4ECB3D705FE736D00954E26 /* InstallerApp.m in Sources */,
+				7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				D4ECB3D805FE736D00954E26 /* InstallerAppMain.m in Sources */,
 				D4E852F219F6CC2E00E25BBC /* MenuMeterWorkarounds.m in Sources */,
 			);
@@ -1677,6 +1716,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7B620CE41E6D4F1700B499B3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B620CE51E6D4F1700B499B3 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D42EC96E03D49B1D00A87BC9 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1991,7 +2038,7 @@
 				PACKAGE_SOURCE_ITEM_4 = "MenuCracker/Artistic License.rtf";
 				PACKAGE_SOURCE_ITEM_5 = "Docs/MenuMeters FAQ.rtf";
 				PRODUCT_NAME = MenuMeters;
-				PRODUCT_VERSION = 1.9.3;
+				PRODUCT_VERSION = 1.10.1;
 				RSRCFORK_SOURCE_ITEM_1 = "Docs/Website - Donate.webloc";
 				STRIP_NIBS = 0;
 			};
@@ -2071,7 +2118,7 @@
 				PACKAGE_SOURCE_ITEM_4 = "MenuCracker/Artistic License.rtf";
 				PACKAGE_SOURCE_ITEM_5 = "Docs/MenuMeters FAQ.rtf";
 				PRODUCT_NAME = MenuMeters;
-				PRODUCT_VERSION = 1.9.3;
+				PRODUCT_VERSION = 1.10.1;
 				RSRCFORK_SOURCE_ITEM_1 = "Docs/Website - Donate.webloc";
 				STRIP_NIBS = 0;
 			};

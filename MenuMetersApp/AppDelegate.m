@@ -11,6 +11,7 @@
 #import "MenuMeterDiskExtra.h"
 #import "MenuMeterMemExtra.h"
 #import "MenuMeterNetExtra.h"
+#import "MenuMeterDateExtra.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +24,14 @@
     MenuMeterDiskExtra*diskExtra;
     MenuMeterNetExtra*netExtra;
     MenuMeterMemExtra*memExtra;
+    MenuMeterDateExtra *dateExtra;
     
     NSTimer*timer;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    dateExtra=[[MenuMeterDateExtra alloc] initWithBundle:[NSBundle mainBundle]];
+    
     cpuExtra=[[MenuMeterCPUExtra alloc] initWithBundle:[NSBundle mainBundle]];
     
     diskExtra=[[MenuMeterDiskExtra alloc] initWithBundle:[NSBundle mainBundle]];

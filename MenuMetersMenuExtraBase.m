@@ -14,14 +14,18 @@
     self=[super initWithBundle:bundle];
     return self;
 }
--(void)timerFired:(id)notused
+-(void)timerFired:(id)timer
 {
     statusItem.menu=self.menu;
-    NSImage*canvas=[[NSImage alloc] initWithSize:NSMakeSize(self.length, self.view.frame.size.height)];
-    [canvas lockFocus];
-    [self.view drawRect:NSMakeRect(0, 0, canvas.size.width, canvas.size.height)];
-    [canvas unlockFocus];
-    statusItem.button.image=canvas;
+    if ([[self.menu title] length] == 0) {
+        NSImage*canvas=[[NSImage alloc] initWithSize:NSMakeSize(self.length, self.view.frame.size.height)];
+        [canvas lockFocus];
+        [self.view drawRect:NSMakeRect(0, 0, canvas.size.width, canvas.size.height)];
+        [canvas unlockFocus];
+        statusItem.button.image=canvas;
+    } else {
+        statusItem.button.title = [self.menu title];
+    }
 }
 - (void)configDisplay:(NSString*)bundleID fromPrefs:(MenuMeterDefaults*)ourPrefs withTimerInterval:(NSTimeInterval)interval
 {

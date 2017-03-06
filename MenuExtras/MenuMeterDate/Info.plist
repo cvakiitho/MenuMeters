@@ -5,28 +5,22 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>MenuMeters</string>
-	<key>CFBundleGetInfoString</key>
-	<string>MenuMeters El Capitan Port 1.9.2, ©2015 Y. Tachikawa</string>
+	<string>MenuMeterDate</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yujitach.MenuMeters</string>
+	<string>com.ragingmenace.MenuMeterDate</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>MenuMeters</string>
+	<string>MenuMeterDate</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.10.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.10.1</string>
-	<key>NSMainNibFile</key>
-	<string>MenuMetersPref</string>
-	<key>NSPrefPaneIconFile</key>
-	<string>MenuMetersPref.tiff</string>
+	<key>NSMenuExtraWidth</key>
+	<integer>16</integer>
 	<key>NSPrincipalClass</key>
-	<string>MenuMetersPref</string>
+	<string>MenuMeterMemExtra</string>
 </dict>
 </plist>
