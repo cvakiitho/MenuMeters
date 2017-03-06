@@ -72,8 +72,6 @@
 		7B620CEA1E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
 		7B620CEB1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
 		7B620CEC1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
-		7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
-		7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
 		7B620CF21E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
 		7B620CF31E6D4F1700B499B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE41E6D4F1700B499B3 /* Localizable.strings */; };
 		7B620CF41E6D4F1700B499B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE41E6D4F1700B499B3 /* Localizable.strings */; };
@@ -1636,7 +1634,6 @@
 				D4ECB3AA05FE72E100954E26 /* MenuMeterDefaults.m in Sources */,
 				D4ECB3AB05FE72E100954E26 /* MenuMeterPowerMate.m in Sources */,
 				D4ECB3AC05FE72E100954E26 /* MenuMetersPref.m in Sources */,
-				7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				D4E8531319F6CD0300E25BBC /* MenuMeterWorkarounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1654,7 +1651,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4ECB3D705FE736D00954E26 /* InstallerApp.m in Sources */,
-				7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				D4ECB3D805FE736D00954E26 /* InstallerAppMain.m in Sources */,
 				D4E852F219F6CC2E00E25BBC /* MenuMeterWorkarounds.m in Sources */,
 			);
