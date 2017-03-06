@@ -10,7 +10,10 @@ Additional features over standart fork:
 
 # Screenshots
 
-![screenshot1.png](./Docs/screenshot1.png) ![screenshot2.png](./Docs/screenshot2.png)
+Screenshot CPU Graph | Screenshot Date
+--- | ---
+![screenshot1.png](./Docs/screenshot1.png) | ![screenshot2.png](./Docs/screenshot2.png)
+
 
 # Alernate branches
 
