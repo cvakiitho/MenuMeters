@@ -67,16 +67,11 @@
 		3383C1E81B69DD2D00915D5D /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3383C1E01B69DD2D00915D5D /* nl.lproj */; };
 		3383C1E91B69DD2D00915D5D /* zh_CN.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3383C1E11B69DD2D00915D5D /* zh_CN.lproj */; };
 		33BA36E91B69E74400B4220E /* MenuMeterDefaults.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4ECB2C805FE6F4000954E26 /* MenuMeterDefaults.bundle */; };
-		7B620CE61E6D4F1700B499B3 /* MenuMeterDateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CDF1E6D4F1700B499B3 /* MenuMeterDateView.h */; };
-		7B620CE71E6D4F1700B499B3 /* MenuMeterDateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CDF1E6D4F1700B499B3 /* MenuMeterDateView.h */; };
 		7B620CE81E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
 		7B620CE91E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
 		7B620CEA1E6D4F1700B499B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B620CE01E6D4F1700B499B3 /* Info.plist */; };
 		7B620CEB1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
 		7B620CEC1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */; };
-		7B620CED1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE21E6D4F1700B499B3 /* MenuMeterDateView.m */; };
-		7B620CEE1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE21E6D4F1700B499B3 /* MenuMeterDateView.m */; };
-		7B620CEF1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE21E6D4F1700B499B3 /* MenuMeterDateView.m */; };
 		7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
 		7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
 		7B620CF21E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */; };
@@ -321,10 +316,8 @@
 		3383C1DF1B69DD2D00915D5D /* Japanese.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Japanese.lproj; sourceTree = "<group>"; };
 		3383C1E01B69DD2D00915D5D /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		3383C1E11B69DD2D00915D5D /* zh_CN.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = zh_CN.lproj; sourceTree = "<group>"; };
-		7B620CDF1E6D4F1700B499B3 /* MenuMeterDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuMeterDateView.h; sourceTree = "<group>"; };
 		7B620CE01E6D4F1700B499B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuMeterDateExtra.h; sourceTree = "<group>"; };
-		7B620CE21E6D4F1700B499B3 /* MenuMeterDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuMeterDateView.m; sourceTree = "<group>"; };
 		7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuMeterDateExtra.m; sourceTree = "<group>"; };
 		7B620CE51E6D4F1700B499B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7BE1EA051CCE8B2A00CACD11 /* smc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = smc.c; path = MenuExtras/MenuMeterCPU/smc.c; sourceTree = "<group>"; };
@@ -635,8 +628,6 @@
 			isa = PBXGroup;
 			children = (
 				7B620CE01E6D4F1700B499B3 /* Info.plist */,
-				7B620CDF1E6D4F1700B499B3 /* MenuMeterDateView.h */,
-				7B620CE21E6D4F1700B499B3 /* MenuMeterDateView.m */,
 				7B620CE11E6D4F1700B499B3 /* MenuMeterDateExtra.h */,
 				7B620CE31E6D4F1700B499B3 /* MenuMeterDateExtra.m */,
 				7B620CE41E6D4F1700B499B3 /* Localizable.strings */,
@@ -1036,7 +1027,6 @@
 				D4ECB39805FE72E100954E26 /* MenuMeterDisk.h in Headers */,
 				D4ECB39905FE72E100954E26 /* MenuMeterMem.h in Headers */,
 				D4ECB39A05FE72E100954E26 /* MenuMeterNet.h in Headers */,
-				7B620CE71E6D4F1700B499B3 /* MenuMeterDateView.h in Headers */,
 				D4ECB39B05FE72E100954E26 /* MenuMeterDefaults.h in Headers */,
 				D4ECB39C05FE72E100954E26 /* MenuMeterPowerMate.h in Headers */,
 				D4ECB39D05FE72E100954E26 /* MenuMeters.h in Headers */,
@@ -1059,7 +1049,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B620CE61E6D4F1700B499B3 /* MenuMeterDateView.h in Headers */,
 				7B620CEB1E6D4F1700B499B3 /* MenuMeterDateExtra.h in Headers */,
 				D4ECB3CF05FE736D00954E26 /* InstallerApp.h in Headers */,
 				D4ECB3D005FE736D00954E26 /* Installer.h in Headers */,
@@ -1566,7 +1555,6 @@
 				3383C1841B69B88C00915D5D /* MenuMeterCPUStats.m in Sources */,
 				3345DD2F1B6BEFDE003843FC /* MenuMetersMenuExtraBase.m in Sources */,
 				3383C1851B69B89100915D5D /* MenuMeterUptime.m in Sources */,
-				7B620CEF1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */,
 				3383C18B1B69C75A00915D5D /* MenuMeterMemStats.m in Sources */,
 				3383C1931B69C78600915D5D /* MenuMeterDiskSpace.m in Sources */,
 				7BE1EA081CCE8B2A00CACD11 /* smc.c in Sources */,
@@ -1650,7 +1638,6 @@
 				D4ECB3AC05FE72E100954E26 /* MenuMetersPref.m in Sources */,
 				7B620CF11E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
 				D4E8531319F6CD0300E25BBC /* MenuMeterWorkarounds.m in Sources */,
-				7B620CEE1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,7 +1655,6 @@
 			files = (
 				D4ECB3D705FE736D00954E26 /* InstallerApp.m in Sources */,
 				7B620CF01E6D4F1700B499B3 /* MenuMeterDateExtra.m in Sources */,
-				7B620CED1E6D4F1700B499B3 /* MenuMeterDateView.m in Sources */,
 				D4ECB3D805FE736D00954E26 /* InstallerAppMain.m in Sources */,
 				D4E852F219F6CC2E00E25BBC /* MenuMeterWorkarounds.m in Sources */,
 			);

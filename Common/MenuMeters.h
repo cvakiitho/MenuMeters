@@ -49,6 +49,9 @@
 // Bundle information for the pref pane
 #define kPrefPaneBundleID				@"com.ragingmenace.MenuMeters"
 
+// Bundle ID for the Memory menu extra
+#define kDateMenuBundleID				@"com.ragingmenace.MenuMeterDate"
+
 ///////////////////////////////////////////////////////////////
 //
 //	Preference information

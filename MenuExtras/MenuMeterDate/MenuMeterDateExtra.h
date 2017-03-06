@@ -26,26 +26,24 @@
 #import "AppleUndocumented.h"
 #import "MenuMeters.h"
 #import "MenuMeterDefaults.h"
-#import "MenuMeterDateView.h"
 #import "MenuMeterWorkarounds.h"
-
 
 @interface MenuMeterDateExtra : NSMenuExtra  {
 
+    NSDateFormatter *dateFormatter;
+    
     BOOL							isPantherOrLater,    isLeopardOrLater;
 	// Menu Extra necessities
 	NSMenu 							*extraMenu;
-    MenuMeterDateView 				*extraView;
 	// The timer
 	NSTimer							*updateTimer;
 	// Pref object
 	MenuMeterDefaults				*ourPrefs;
-	// Width of the menu item
-	float							menuWidth;
 	// Width of the text display
 	float							textWidth;
 	// Theme support
 	NSColor							*fgMenuThemeColor;
+    NSDatePicker                    *date;
 
 } // MenuMeterMemExtra
 

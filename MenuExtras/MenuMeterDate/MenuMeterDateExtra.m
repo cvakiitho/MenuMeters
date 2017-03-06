@@ -109,6 +109,9 @@
 		[self release];
 		return nil;
 	}
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy MMM d  HH:mm"];
 
 	// Setup our menu
 	extraMenu = [[NSMenu alloc] initWithTitle:@""];
@@ -122,58 +125,20 @@
 	// Setup menu content
 	NSMenuItem *menuItem = nil;
 
+    date = [[NSDatePicker alloc] initWithFrame: NSMakeRect(0, 0, 140, 150)];
+    [date setDatePickerStyle: NSClockAndCalendarDatePickerStyle];
+    [date setDatePickerElements: NSYearMonthDayDatePickerElementFlag];
+    NSDate *cur = [NSDate date];
+    [date setDateValue:cur];
+
+
 	// Add memory usage menu items and placeholder
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kUsageTitle value:nil table:nil]
-												  action:nil
-										   keyEquivalent:@""];
-	[menuItem setEnabled:NO];
+	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+    [menuItem setView: date];
+    [menuItem setEnabled:YES];
+    
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
 	[menuItem setEnabled:NO];
-
-	// Add memory page stats title and placeholders
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kPageStatsTitle value:nil table:nil]
-												  action:nil
-										   keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-
-	// Add VM stats menu items and placeholders
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kVMStatsTitle value:nil table:nil]
-												  action:nil
-										   keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-
-	// Swap file stats menu item and placeholders
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kSwapStatsTitle value:nil table:nil]
-												  action:nil
-										   keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
-
-	// Get our view
-    extraView = [[MenuMeterDateView alloc] initWithFrame:[[self view] frame] menuExtra:self];
-	if (!extraView) {
-		[self release];
-		return nil;
-	}
-    [self setView:extraView];
-
 
 	// Register for pref changes
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
@@ -193,7 +158,7 @@
 	[self updateMemDisplay:nil];
 
     // And hand ourself back to SystemUIServer
-	NSLog(@"MenuMeterMem loaded.");
+	NSLog(@"MenuMeterDate loaded.");
     return self;
 
 } // initWithBundle
@@ -220,8 +185,6 @@
 
 - (void)dealloc {
 
-	// Release the view and menu
-	[extraView release];
     [extraMenu release];
 	[updateTimer invalidate];  // Released by the runloop
 	[ourPrefs release];
@@ -265,8 +228,6 @@
 
 - (void)updateMenuContent {
 
-    LiveUpdateMenuItemTitle(extraMenu, 0, @"");
-
 } // updateMenuContent
 
 ///////////////////////////////////////////////////////////////
@@ -277,15 +238,15 @@
 
 - (void)updateMemDisplay:(NSTimer *)timer {
 
-	// This code used to try to avoid a redraw if nothing had changed, but
-	// the cost of a redraw is so low its a false optimization.
-	[extraView setNeedsDisplay:YES];
+    NSDate *cur = [NSDate date];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate: cur];
+    [extraMenu setTitle: formattedDateString];
 
-	// If the menu is down, update it
-	if ([self isMenuDown] || 
-		([self respondsToSelector:@selector(isMenuDownForAX)] && [self isMenuDownForAX])) {
+    // If the menu is down, update it
+	if ([self isMenuDown] || ([self respondsToSelector:@selector(isMenuDownForAX)] && [self isMenuDownForAX])) {
 		[self updateMenuWhenDown];
-	}
+    }
 
 } // updateMemDisplay
 
@@ -307,7 +268,7 @@
 
 - (void)configFromPrefs:(NSNotification *)notification {
 #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_11
-    [super configDisplay:kMemMenuBundleID fromPrefs:ourPrefs withTimerInterval:[ourPrefs memInterval]];
+    [super configDisplay:kDateMenuBundleID fromPrefs:ourPrefs withTimerInterval:[ourPrefs cpuInterval]];
 #endif
 
 	// Update prefs
@@ -317,12 +278,9 @@
 	[fgMenuThemeColor release];
 	fgMenuThemeColor = [MenuItemTextColor() retain];
 	
-	// Fix our menu size to match our config
-	menuWidth = 0;
-    
 	// Restart the timer
 	[updateTimer invalidate];  // Runloop releases and retains the next one
-	updateTimer = [NSTimer scheduledTimerWithTimeInterval:[ourPrefs memInterval]
+	updateTimer = [NSTimer scheduledTimerWithTimeInterval:[ourPrefs cpuInterval]
 												   target:self
 												 selector:@selector(updateMemDisplay:)
 												 userInfo:nil
@@ -332,13 +290,6 @@
 		[[NSRunLoop currentRunLoop] addTimer:updateTimer
 									 forMode:NSEventTrackingRunLoopMode];
 	}
-
-	// Resize the view
-	[extraView setFrameSize:NSMakeSize(menuWidth, [extraView frame].size.height)];
-	[self setLength:menuWidth];
-
-	// Flag us for redisplay
-	[extraView setNeedsDisplay:YES];
 
 } // configFromPrefs
 
