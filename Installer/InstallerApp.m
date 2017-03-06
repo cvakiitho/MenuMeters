@@ -147,7 +147,7 @@ enum {
 			// context
 			nil,
 			// msg
-      @"%@", [[NSBundle mainBundle] localizedStringForKey:kUnsupportedOSError value:nil table:nil]);
+			@"%@", [[NSBundle mainBundle] localizedStringForKey:kUnsupportedOSError value:nil table:nil]);
 		// Disable install
 		[installButton setEnabled:NO];
 	}
