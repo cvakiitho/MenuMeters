@@ -26,10 +26,11 @@ Original MenuMeters come from:
 
   * http://www.ragingmenace.com/software/menumeters/
 
-Stopped developed because Apple start put put a spokes in wheel, which makes Alex Harper mad and he stops developing MenuMeters.
+Stopped developed because Apple start put a spokes in wheel, which makes Alex Harper mad and he stops developing MenuMeters.
 
 Later, MenuMeters was ported to El Capitan by Tachikawa:
 
   *  http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
+  *  https://github.com/yujitach/MenuMeters
 
-And forked by me, to add more nifty features.
+And then forked by me, to add more nifty features.
