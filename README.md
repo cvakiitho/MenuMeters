@@ -22,15 +22,21 @@ CPU / Memory per process load monitor not possible to acomplish due to Apple res
 
 # History
 
+### 2002-2014
+
 Original MenuMeters come from:
 
   * http://www.ragingmenace.com/software/menumeters/
 
 Stopped developed because Apple start put a spokes in wheel, which makes Alex Harper mad and he stops developing MenuMeters.
 
+###  2015-2016
+
 Later, MenuMeters was ported to El Capitan by Tachikawa:
 
   *  http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/
   *  https://github.com/yujitach/MenuMeters
+
+### 2016
 
 And then forked by me, to add more nifty features.
