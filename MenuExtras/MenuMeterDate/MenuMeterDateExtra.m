@@ -90,7 +90,7 @@
 	}
     
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy MMM d  HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy MMM d ccc  HH:mm"];
     dayFormatter = [[NSDateFormatter alloc] init];
     [dayFormatter setDateFormat:@"yyyy/MM/dd"];
 
