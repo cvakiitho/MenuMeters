@@ -89,6 +89,8 @@
 		return nil;
 	}
     
+    detailFormatter = [[NSDateFormatter alloc] init];
+    [detailFormatter setDateFormat:@"MMM d yyyy cccc  HH:mm:ss"];
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"ccc yyyy MMM d  HH:mm"];
     dayFormatter = [[NSDateFormatter alloc] init];
@@ -114,6 +116,10 @@
     [date setDatePickerElements: NSYearMonthDayDatePickerElementFlag];
     [date setDateValue:cur];
     dateLast = [cur copy];
+
+    menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+    [menuItem setEnabled:NO];
+    [extraMenu addItem:[NSMenuItem separatorItem]];
 
 	// Add memory usage menu items and placeholder
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
@@ -212,6 +218,11 @@
 // called the menu method directly.
 
 - (void)updateMenuContent {
+
+    NSDate *cur = [NSDate date];
+    NSString *formattedDateString = [detailFormatter stringFromDate: cur];
+
+    LiveUpdateMenuItemTitle(extraMenu, 0, formattedDateString);
 
 } // updateMenuContent
 

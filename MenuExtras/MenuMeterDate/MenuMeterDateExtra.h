@@ -33,6 +33,7 @@
 
     NSDateFormatter *dayFormatter;
     NSDateFormatter *dateFormatter;
+    NSDateFormatter *detailFormatter;
     
     BOOL							isPantherOrLater,    isLeopardOrLater;
 	// Menu Extra necessities
