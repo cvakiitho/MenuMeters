@@ -14,6 +14,13 @@ Screenshot CPU Graph | Screenshot Date
 --- | ---
 ![screenshot1.png](./Docs/screenshot1.png) | ![screenshot2.png](./Docs/screenshot2.png)
 
+# Installation
+
+Manual installation requires to run:
+
+    sudo xattr -dr com.apple.quarantine ~/Library/PreferencePanes/MenuMeters.prefPane/
+
+
 # Alernate branches
 
 CPU / Memory per process load monitor not possible to acomplish due to Apple restrictions.
