@@ -30,7 +30,7 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    dateExtra=[[MenuMeterDateExtra alloc] initWithBundle:[NSBundle mainBundle]];
+    // dateExtra=[[MenuMeterDateExtra alloc] initWithBundle:[NSBundle mainBundle]];
     
     cpuExtra=[[MenuMeterCPUExtra alloc] initWithBundle:[NSBundle mainBundle]];
     
