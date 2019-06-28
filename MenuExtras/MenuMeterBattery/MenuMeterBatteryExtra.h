@@ -27,14 +27,10 @@
 #import "MenuMeters.h"
 #import "MenuMeterDefaults.h"
 #import "MenuMeterWorkarounds.h"
-#import "MenuMeterDateView.h"
+#import "MenuMeterBatteryView.h"
 
-@interface MenuMeterDateExtra : NSMenuExtra  {
+@interface MenuMeterBatteryExtra : NSMenuExtra  {
 
-    NSDateFormatter *dayFormatter;
-    NSDateFormatter *dateFormatter;
-    NSDateFormatter *detailFormatter;
-    
     BOOL							isPantherOrLater,    isLeopardOrLater;
 	// Menu Extra necessities
 	NSMenu 							*extraMenu;

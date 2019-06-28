@@ -1,7 +1,7 @@
 //
-//  MenuMeterMemExtra.h
+//  MenuMeterMemView.h
 //
-//	Menu Extra implementation
+//	NSView for the menu extra
 //
 //	Copyright (c) 2002-2014 Alex Harper
 //
@@ -22,33 +22,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Carbon/Carbon.h>
 #import "AppleUndocumented.h"
-#import "MenuMeters.h"
-#import "MenuMeterDefaults.h"
-#import "MenuMeterWorkarounds.h"
-#import "MenuMeterDateView.h"
 
-@interface MenuMeterDateExtra : NSMenuExtra  {
+@interface MenuMeterBatteryView : NSDatePicker {
 
-    NSDateFormatter *dayFormatter;
-    NSDateFormatter *dateFormatter;
-    NSDateFormatter *detailFormatter;
-    
-    BOOL							isPantherOrLater,    isLeopardOrLater;
-	// Menu Extra necessities
-	NSMenu 							*extraMenu;
-	// The timer
-	NSTimer							*updateTimer;
-	// Pref object
-	MenuMeterDefaults				*ourPrefs;
-	// Width of the text display
-	float							textWidth;
-	// Theme support
-	NSColor							*fgMenuThemeColor;
-    NSDatePicker                    *date;
-    NSDate                          *dateLast;
+	// Our menu extra
+	NSMenuExtra 	*memMenuExtra;
 
-} // MenuMeterMemExtra
+} // MenuMeterMemView
 
 @end

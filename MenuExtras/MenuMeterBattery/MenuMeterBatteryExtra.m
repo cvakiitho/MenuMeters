@@ -21,7 +21,7 @@
 // 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#import "MenuMeterDateExtra.h"
+#import "MenuMeterBatteryExtra.h"
 
 
 ///////////////////////////////////////////////////////////////
@@ -30,7 +30,7 @@
 //
 ///////////////////////////////////////////////////////////////
 
-@interface MenuMeterDateExtra (PrivateMethods)
+@interface MenuMeterBatteryExtra (PrivateMethods)
 
 // Menu generation
 - (void)updateMenuContent;
