@@ -443,7 +443,7 @@
 		D4E4BF9404F333B100A87BC9 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4E4BF9504F333B100A87BC9 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D4E4BF9B04F333B100A87BC9 /* MenuMetersPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = MenuMetersPref.tiff; sourceTree = "<group>"; };
-		D4E4BF9C04F333B100A87BC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D4E4BF9C04F333B100A87BC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4E4BFA004F333B100A87BC9 /* MenuMetersPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MenuMetersPref.h; sourceTree = "<group>"; };
 		D4E4BFA104F333B100A87BC9 /* MenuMetersPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuMetersPref.m; sourceTree = "<group>"; };
 		D4E4BFA704F333B100A87BC9 /* CubeRootScale.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = CubeRootScale.tiff; sourceTree = "<group>"; };
@@ -455,7 +455,7 @@
 		D4E4C01A04F3420700A87BC9 /* InstallerAppMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = InstallerAppMain.m; sourceTree = "<group>"; };
 		D4E4C02004F3420700A87BC9 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Installer.nib; sourceTree = "<group>"; };
 		D4E4C02204F3420700A87BC9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4E4C02304F3420700A87BC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D4E4C02304F3420700A87BC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4E4C02404F3420700A87BC9 /* Installer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Installer.icns; sourceTree = "<group>"; };
 		D4EAD0070608D20800503A52 /* MenuMeters FAQ.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MenuMeters FAQ.rtf"; sourceTree = "<group>"; };
 		D4EB673E04F5C6C800A87BC9 /* Package.pl */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.perl; path = Package.pl; sourceTree = "<group>"; };
@@ -2033,11 +2033,7 @@
 		D4AFB343087726B20023B640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-					ppc,
-				);
+				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
@@ -2064,11 +2060,7 @@
 		D4CD20430D88E34100481A51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-					ppc,
-				);
+				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
