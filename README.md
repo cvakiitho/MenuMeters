@@ -8,6 +8,10 @@ Additional features over standart fork:
 * Fan speed monitor
 * Date Time widget
 
+# itsycal
+
+MenuMeters clock widget removed in favor of: https://github.com/sfsam/itsycal
+
 # Screenshots
 
 Screenshot CPU Graph | Screenshot Date
@@ -19,7 +23,6 @@ Screenshot CPU Graph | Screenshot Date
 Manual installation requires to run:
 
     sudo xattr -dr com.apple.quarantine ~/Library/PreferencePanes/MenuMeters.prefPane/
-
 
 # Alernate branches
 
