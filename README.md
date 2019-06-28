@@ -14,7 +14,7 @@ MenuMeters clock widget removed in favor of: https://github.com/sfsam/itsycal
 
 # Screenshots
 
-![screenshot1.png](./Docs/screenshot1.png) ![screenshot2.png](./Docs/screenshot2.png)
+![metters.png](./Docs/metters.png)
 
 # Installation
 
