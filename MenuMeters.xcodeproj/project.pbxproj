@@ -2017,6 +2017,7 @@
 			buildSettings = {
 				IMAGE_DSSTORE = Package/ImageDS;
 				KILL_ITEM_1 = "Restart SystemUIServer.app";
+				MACOSX_DEPLOYMENT_TARGET = 11;
 				PACKAGE_BUILD_ITEM_1 = "MenuMeters Installer.app";
 				PACKAGE_SOURCE_ITEM_1 = "Docs/MenuMeters Read Me.rtf";
 				PACKAGE_SOURCE_ITEM_2 = Docs/History.txt;
@@ -2026,6 +2027,7 @@
 				PRODUCT_NAME = MenuMeters;
 				PRODUCT_VERSION = 1.10.8;
 				RSRCFORK_SOURCE_ITEM_1 = "Docs/Website - Donate.webloc";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
 				STRIP_NIBS = 0;
 			};
 			name = Release;
@@ -2089,6 +2091,9 @@
 			buildSettings = {
 				IMAGE_DSSTORE = Package/ImageDS;
 				KILL_ITEM_1 = "Restart SystemUIServer.app";
+				MACOSX_DEPLOYMENT_TARGET = 11;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4][arch=ppc]" = 11;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5][arch=*]" = 11;
 				PACKAGE_BUILD_ITEM_1 = "MenuMeters Installer.app";
 				PACKAGE_SOURCE_ITEM_1 = "Docs/MenuMeters Read Me.rtf";
 				PACKAGE_SOURCE_ITEM_2 = Docs/History.txt;
@@ -2098,6 +2103,7 @@
 				PRODUCT_NAME = MenuMeters;
 				PRODUCT_VERSION = 1.10.8;
 				RSRCFORK_SOURCE_ITEM_1 = "Docs/Website - Donate.webloc";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
 				STRIP_NIBS = 0;
 			};
 			name = Debug;

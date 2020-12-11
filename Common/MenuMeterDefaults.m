@@ -540,7 +540,7 @@
 	int prefVersion = -1;  // Use an illegal value
 	if (prefVersionNum) {
 		prefVersion = [prefVersionNum intValue];
-		CFRelease(prefVersionNum);
+        CFRelease((__bridge CFTypeRef)(prefVersionNum));
 	}
 
 	// Migrate prefs from versions before we supported pref fields (0.5 -> 0.6)
@@ -574,7 +574,7 @@
 					newValue = 1;
 			}
 			[self saveIntPref:kNetDisplayModePref value:newValue];
-			CFRelease(netModeNum);
+            CFRelease((__bridge CFTypeRef)(netModeNum));
 		} // end of kNetDisplayModePref migration
 	}
 
@@ -592,7 +592,7 @@
 		} else {
 			[self saveIntPref:kCPUPercentDisplayPref value:kCPUPercentDisplaySmall];
 		}
-		if (splitNum) CFRelease(splitNum);
+        if (splitNum) CFRelease((__bridge CFTypeRef)(splitNum));
 		// Kill the old
 		CFPreferencesSetValue(CFSTR("kCPUPercentDisplaySplit"), NULL,
 							  (CFStringRef)kMenuMeterDefaultsDomain,
@@ -624,7 +624,7 @@
 			if ([memModeNum intValue] == 2) {
 				[self saveIntPref:kMemDisplayModePref value:3];
 			}
-			CFRelease(memModeNum);
+            CFRelease((__bridge CFTypeRef)(memModeNum));
 		}
 	}
 
@@ -641,7 +641,7 @@
 			if ([memModeNum intValue] == 3) {
 				[self saveIntPref:kMemDisplayModePref value:4];
 			}
-			CFRelease(memModeNum);
+            CFRelease((__bridge CFTypeRef)(memModeNum));
 		}
 	}
 
@@ -756,10 +756,10 @@
 																   kCFPreferencesAnyHost);
 		if (preferredArchivedString) {
 			if (CFGetTypeID(preferredArchivedString) == CFDataGetTypeID()) {
-				NSString *preferredString = [NSUnarchiver unarchiveObjectWithData:(NSData *)preferredArchivedString];
+                NSString *preferredString = [NSUnarchiver unarchiveObjectWithData:(__bridge NSData *)preferredArchivedString];
 				if (preferredString && [preferredString isKindOfClass:[NSString class]]) {
 					CFPreferencesSetValue((CFStringRef)kNetPreferInterfacePref,
-										  preferredString,
+                                          (__bridge CFPropertyListRef _Nullable)(preferredString),
 										  (CFStringRef)kMenuMeterDefaultsDomain,
 										  kCFPreferencesCurrentUser,
 										  kCFPreferencesAnyHost);
@@ -809,7 +809,7 @@
 	} else {
 		[self saveDoublePref:prefName value:returnVal];
 	}
-	if (prefValue) CFRelease(prefValue);
+    if (prefValue) CFRelease((__bridge CFTypeRef)(prefValue));
 	return returnVal;
 
 } // _loadDoublePref
@@ -838,7 +838,7 @@
 	} else {
 		[self saveIntPref:prefName value:returnVal];
 	}
-	if (prefValue) CFRelease(prefValue);
+    if (prefValue) CFRelease((__bridge CFTypeRef)(prefValue));
 	return returnVal;
 
 } // _loadIntPref
@@ -867,7 +867,7 @@
 	} else {
 		[self saveBitFlagPref:prefName value:returnVal];
 	}
-	if (prefValue) CFRelease(prefValue);
+    if (prefValue) CFRelease((__bridge CFTypeRef)(prefValue));
 	return returnVal;
 
 } // _loadBitFlagPref
@@ -891,7 +891,7 @@
 	} else {
 		[self saveBoolPref:prefName value:defaultValue];
 	}
-	if (prefValue) CFRelease(prefValue);
+    if (prefValue) CFRelease((__bridge CFTypeRef)(prefValue));
 	return returnValue;
 
 } // _loadBoolPref
@@ -911,7 +911,7 @@
 													(CFStringRef)kMenuMeterDefaultsDomain,
 													kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
 	if (archivedData && (CFGetTypeID(archivedData) == CFDataGetTypeID())) {
-		returnValue = [NSUnarchiver unarchiveObjectWithData:(NSData *)archivedData];
+        returnValue = [NSUnarchiver unarchiveObjectWithData:(__bridge NSData *)archivedData];
 		CFRelease(archivedData);
 	}
 	if (!returnValue) {
@@ -940,7 +940,7 @@
 												   kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
 	if (prefValue && (CFGetTypeID(prefValue) == CFStringGetTypeID())) {
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5
-		returnValue = NSMakeCollectable(prefValue);
+        returnValue = CFBridgingRelease(prefValue);
 #else
 		returnValue = (NSString *)prefValue;
 #endif
@@ -953,7 +953,7 @@
 
 - (void)saveStringPref:(NSString *)prefName value:(NSString *)value {
 	CFPreferencesSetValue((CFStringRef)prefName,
-						  value,
+                          (__bridge CFPropertyListRef _Nullable)(value),
 						  (CFStringRef)kMenuMeterDefaultsDomain,
 						  kCFPreferencesCurrentUser,
 						  kCFPreferencesAnyHost);
